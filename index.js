@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const WebSocket = require("ws")
 const WEB_URL = PORT === 3000 ? "http://localhost:3000/" : "https://blackjack-multiplayer.herokuapp.com/";
 
-const wss = new WebSocket.Server({ server:server })
+const wss = new WebSocket.Server({server: server})
 
 
 // Serve all the static files, (ex. index.html app.js style.css)
@@ -17,7 +17,6 @@ server.listen(PORT, () =>
 );
 
 
-
 // hashmap clients
 const clients = {};
 const games = {};
@@ -26,7 +25,6 @@ const spectators = {};
 
 let dealer = null;
 let gameOn = null;
-
 
 
 wss.on("connection", (ws) => { // wsServer || wss AND request || connection
@@ -716,7 +714,7 @@ wss.on("connection", (ws) => { // wsServer || wss AND request || connection
     avatar: "",
     cards: [],
     bet: 0,
-    balance: 5000,
+    balance: 5000000,
     sum: null,
     hasAce: false,
     isReady: false,
